@@ -8,6 +8,8 @@ gem 'puma', '~> 3.0'
 gem 'pry-rails'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'devise'
+
 
 gem 'haml-rails'
 gem 'sass-rails', '~> 5.0'
@@ -21,6 +23,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'faker'
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
