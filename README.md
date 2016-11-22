@@ -13,7 +13,7 @@ Build a prototype Rails app which allows a user to book a tee-time at a single g
 
 #Acceptance criteria:
 - [x] Tee times are separated by 20 minutes.
-- [ ] Only one user may book a given twenty-minute slot.
+- [x] Only one user may book a given twenty-minute slot.
 - [x] The golf club is open for bookings from 9am to 5pm every day.
-- [ ] Users should have some mechanism to see if a time is already booked.
-- [ ] Users should be able to cancel a booking.
+- [x] Users should have some mechanism to see if a time is already booked.
+- [x] Users should be able to cancel a booking.
