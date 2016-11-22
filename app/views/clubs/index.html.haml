@@ -1,0 +1,33 @@
+.container
+  %h1 Clubs
+
+  %table.table.table-bordered
+    %thead
+      %th Club
+    %tbody
+      - @clubs.each_with_index do |club, index|
+        %tr
+          %td
+            %form.navbar-form.pull-right{ action: club_path(club), method: "GET", name: "datepicker#{index}"  }
+              %label
+                = club.name
+              .form-group
+                .input-group.date
+                  %input.form-control{:type => "text", name: "date", id: "datepicker#{index}"}
+                  %span.input-group-addon
+                    %span.glyphicon.glyphicon-calendar
+
+              :javascript
+                $(document).ready(function(){
+
+                  flatpickr('#datepicker#{index}', {  
+                    onChange: function() {
+                      $("form[name=datepicker#{index}]").submit()
+                    }
+                  })
+
+                  //format: "YYYY/MM/DD"
+
+                });
+             
+      

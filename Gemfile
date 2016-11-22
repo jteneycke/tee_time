@@ -10,6 +10,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
 
+gem 'flatpickr_rails'
 
 gem 'haml-rails'
 gem 'sass-rails', '~> 5.0'

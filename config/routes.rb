@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root "home#index"
-  get 'home/index'
+  root "clubs#index"
 
-  resources :bookings
+  resources :bookings, :clubs
 end
