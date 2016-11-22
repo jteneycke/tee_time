@@ -6,14 +6,14 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.create!(booking_params)
     flash[:create] = "You have booked a tee time for #{@booking.pretty_time}" 
-    redirect_to club_path(@booking.club, date: booking_params[:date])
+    redirect_to club_path(@booking.club, date: booking_params[:tee_time])
   end
 
   def destroy
     @booking = Booking.find(params[:id])
 
     club = @booking.club
-    date = @booking.date
+    date = @booking.tee_time
     flash[:destroy] = "You have cancelled your booking for #{@booking.pretty_time}"
 
     @booking.destroy

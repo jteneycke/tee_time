@@ -14,7 +14,7 @@ class ClubsController < ApplicationController
       (start_time + (slot * 20).minutes)
     end
 
-    @club_bookings = Booking.where(club_id: @club, date: @date)
+    @club_bookings = Booking.where(club_id: @club).on_date(@date)
   end
 
 end

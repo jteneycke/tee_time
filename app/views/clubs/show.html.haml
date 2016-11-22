@@ -7,7 +7,7 @@
 
   %br
   - if flash[:create]
-    .alert.alert-warning= flash[:create]
+    .alert.alert-success= flash[:create]
   - if flash[:destroy]
     .alert.alert-danger= flash[:destroy]
 
@@ -21,7 +21,7 @@
         %tr
           %td= pretty_time(time)
           %td
-            - current_booking = @club_bookings.find_by(time: time, club_id: @club.id)
+            - current_booking = @club_bookings.find_by(tee_time: time, club_id: @club.id)
             - if current_booking
               - if current_booking.user_id == @user.id
                 = link_to "Cancel Booking", booking_path(current_booking), method: :delete, class: "btn btn-danger"
@@ -31,8 +31,7 @@
               = simple_form_for(Booking.new) do |f|
                 = f.hidden_field :user_id, value: @user.id
                 = f.hidden_field :club_id, value: @club.id
-                = f.hidden_field :date, value: @date
-                = f.hidden_field :time, value: time
+                = f.hidden_field :tee_time, value: time
                 = f.submit "Book time", class: "btn btn-info"
 
 
